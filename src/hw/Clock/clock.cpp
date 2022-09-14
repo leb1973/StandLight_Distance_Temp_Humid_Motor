@@ -1,11 +1,11 @@
-#include "clock.cpp.h"
+#include "clock.h"
 
-clock.cpp::clock.cpp()
+clock::clock()
 {
 
 }
 
-clock.cpp::~clock.cpp()
+clock::~clock()
 {
 
 }

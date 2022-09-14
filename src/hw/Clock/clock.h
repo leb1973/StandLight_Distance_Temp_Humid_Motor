@@ -1,13 +1,13 @@
-#ifndef CLOCK.CPP_H
-#define CLOCK.CPP_H
+#ifndef CLOCK_H
+#define CLOCK_H
 
 #pragma once
 
-class clock.cpp
+class clock
 {
 public:
-    clock.cpp();
-    ~clock.cpp();
+    clock();
+    ~clock();
 
 private:
 

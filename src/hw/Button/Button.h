@@ -22,6 +22,4 @@ public:
     int getState();
 
 };
-
-
 #endif /* __BUTTON_H__ */

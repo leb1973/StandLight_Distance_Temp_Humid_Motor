@@ -1,33 +1,43 @@
+
 #ifndef __VIEW_H__
 #define __VIEW_H__
 
-    #include <string>
-    #include "Led.h"
-    enum{LIGHT_OFF,LED_1_ON,LED_2_ON,LED_3_ON,LED_4_ON,LED_5_ON};
+#include <string>
+#include "Led.h"
+#include "LCD.h"
+
+#include "lightState.h"
+
+
+// enum {LIGHT_OFF, LIGHT_ON,LIGHT_1,LIGHT_2,LIGHT_3,LIGHT_4,LIGHT_5};
+
 class View
 {
-    private:
-        int lightState;
-
-        Led *light1;
-        Led *light2;
-        Led *light3;
-        Led *light4;
-        Led *light5;
-        
-
-    public:
-    View(Led *led1,Led *led2,Led *led3,Led *led4,Led *led5);
+private:
+    int lightState;
+    Led *light1;
+    Led *light2;
+    Led *light3;
+    Led *light4;
+    Led *light5;
+    LCD *lcd;
+public:
+    View(Led *led1,Led *led2,Led *led3,Led *led4,Led *led5,LCD *lcd);
     virtual ~View();
+    void setState(int state);
     void lightView();
-    void updateState(std::string strState);
-    void lightON();
+    void lightOn_1();
+    void lightOn_2();
+    void lightOn_3();
+    void lightOn_4();
+    void lightOn_5();
     void lightOff();
-    void lightON1();
-    void lightON2();
-    void lightON3();
-    void lightON4();
-    void lightON5();
+    
+
+    
 };
-#endif
+
+#endif /* __VIEW_H__ */
+
+
 

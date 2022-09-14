@@ -1,17 +1,16 @@
 #include "View.h"
 #include <wiringPi.h>
 
-
-
-
-View::View(Led *led1, Led *led2, Led *led3, Led *led4, Led *led5)
+View::View(Led *led1,Led *led2,Led *led3,Led *led4,Led *led5,LCD *lcd)
 {
     light1 = led1;
     light2 = led2;
     light3 = led3;
-    light4=  led4;
+    light4 = led4;
     light5 = led5;
+
     lightState = LIGHT_OFF;
+    this->lcd = lcd;
 }
 
 View::~View()
@@ -19,133 +18,118 @@ View::~View()
 
 }
 
-void View::updateState(std::string strState)
+void View::setState(int state)
 {
-
-     switch (lightState)
-    {
-        
-        case LIGHT_OFF:
-            if(strState == "State1On"){
-                lightState = LED_1_ON;
-
-            }
-            break;
-        case LED_1_ON:
-             if(strState == "State2On"){
-                lightState = LED_2_ON;
-            }
-            break;
-        case LED_2_ON:
-            if(strState == "State3On"){
-                lightState = LED_3_ON;
-            }
-            break;
-        case LED_3_ON:
-            if(strState == "State4On"){
-                lightState = LED_4_ON;
-            }
-            break;
-        case LED_4_ON:
-            if(strState == "State5On"){
-                lightState = LED_5_ON;
-            }
-            break;
-        case LED_5_ON:
-            if(strState == "StateOff"){
-                lightState = LIGHT_OFF;
-            }
-            break;
-    }
+    lightState = state;
 }
+
+
 
 
 void View::lightView()
 {
     switch (lightState)
     {
+        char buff[30];
         case LIGHT_OFF:
+            sprintf(buff,"mode off");
+            lcd->WriteStringXY(0,0,buff);
             lightOff();
         break;
 
-        case LED_1_ON:
-            lightON1();
+        case LIGHT_1:
+            sprintf(buff,"mode 1  ");
+            lcd->WriteStringXY(0,0,buff);
+            lightOn_1();
         break;
-
-        case LED_2_ON:
-            lightON2();         
+        case LIGHT_2:
+            sprintf(buff,"mode 2  ");
+            lcd->WriteStringXY(0,0,buff);
+            lightOn_2();
         break;
-        case LED_3_ON:
-            lightON3();
+        case LIGHT_3:
+            sprintf(buff,"mode 3  ");
+            lcd->WriteStringXY(0,0,buff);
+            lightOn_3();
         break;
-        case LED_4_ON:
-            lightON4();
+        case LIGHT_4:
+            sprintf(buff,"mode 4  ");
+            lcd->WriteStringXY(0,0,buff);
+            lightOn_4();
         break;
-        case LED_5_ON:
-            lightON5();
+        case LIGHT_5:
+            sprintf(buff,"mode 5  ");
+            lcd->WriteStringXY(0,0,buff);
+            lightOn_5();
         break;
     }
 }
 
-// void View::lightON()
+// void View::lightOn()
 // {
+//     static unsigned int prevTime = 0;
     
+//     if (millis() - prevTime < 300) return;
 //     prevTime = millis();
-//     light1 -> Toggle();
-//     light2 -> Toggle();
-//     light3 -> Toggle();
-//     light4 -> Toggle();
-//     light5 -> Toggle();
+//     light->Toggle();
 // }
-
-
-
-void View::lightON1()
-{
-    light1 -> On();
-    light2 -> Off();
-    light3 -> Off();
-    light4 -> Off();
-    light5 -> Off();
-}
-void View::lightON2()
-{
-    light1 -> On();
-    light2 -> On();
-    light3 -> Off();
-    light4 -> Off();
-    light5 -> Off();
-}
-void View::lightON3()
-{
-    light1 -> On();
-    light2 -> On();
-    light3 -> On();
-    light4 -> Off();
-    light5 -> Off();
-}
-void View::lightON4()
-{
-    light1 -> On();
-    light2 -> On();
-    light3 -> On();
-    light4 -> On();
-    light5 -> Off();
-}
-void View::lightON5()
-{
-    light1 -> On();
-    light2 -> On();
-    light3 -> On();
-    light4 -> On();
-    light5 -> On();
-}
 
 void View::lightOff()
 {
-    light1 -> Off();
-    light2 -> Off();
-    light3 -> Off();
-    light4 -> Off();
-    light5 -> Off();
+    light1->Off();
+    light2->Off();
+    light3->Off();
+    light4->Off();
+    light5->Off();
+
+}
+
+void View::lightOn_1()
+{
+
+    light1->On();
+    light2->Off();
+    light3->Off();
+    light4->Off();
+    light5->Off();
+}
+
+void View::lightOn_2()
+{
+    light1->On();
+    light2->On();
+    light3->Off();
+    light4->Off();
+    light5->Off();
+
+}
+
+void View::lightOn_3()
+{
+    light1->On();
+    light2->On();
+    light3->On();
+    light4->Off();
+    light5->Off();
+
+}
+
+void View::lightOn_4()
+{
+    light1->On();
+    light2->On();
+    light3->On();
+    light4->On();
+    light5->Off();
+
+}
+
+void View::lightOn_5()
+{
+    light1->On();
+    light2->On();
+    light3->On();
+    light4->On();
+    light5->On();
+
 }
