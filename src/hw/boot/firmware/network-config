@@ -1,0 +1,17 @@
+version: 2
+ethernets:
+  eth0:
+    addresses:
+      - 10.10.16.218/24
+    gateway4: 10.10.16.254
+    nameservers:
+      addresses: [8.8.8.8]
+    optional: true
+wifis:
+  wlan0:
+    dhcp4: true
+    optional: true
+    access-points:
+      "class-603-1":
+        password: "12345678#"
+
