@@ -22,8 +22,11 @@ void Controller::updateEvent(std::string strBtn)
             service->updateState("modeButton");
         }
         
+        if(strBtn == "powerButton"){
+            
+            service->updateState("powerButton");
+        }
 
-    
         if(strBtn == "clockUpdate"){
             
             clockService->updateEvent();

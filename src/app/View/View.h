@@ -21,6 +21,7 @@ private:
     Led *light4;
     Led *light5;
     LCD *lcd;
+    
 public:
     View(Led *led1,Led *led2,Led *led3,Led *led4,Led *led5,LCD *lcd);
     virtual ~View();

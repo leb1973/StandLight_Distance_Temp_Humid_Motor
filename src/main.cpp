@@ -23,7 +23,8 @@ int main()
     std::cout << "Hello World!" << std::endl;
     time_t timeSec;
     struct tm *timeData;
-    Button button1(27);
+    Button modeButton1(27);
+    Button powerButton2(28);
     ClockCheck ClockCheck;
     Led led1(21);
     Led led2(22);
@@ -36,7 +37,7 @@ int main()
     Service service(&view);
     ClockService clockService(&clockView);
     Controller control(&service,&clockService);
-    Listener listener(&button1,&control, &ClockCheck);
+    Listener listener(&modeButton1, &powerButton2, &control, &ClockCheck);
     
     while (1)
     {
@@ -44,10 +45,10 @@ int main()
         view.lightView();
         timeSec = time(NULL);
         timeData = localtime(&timeSec);
-        std::cout << "timeSec : " << timeSec << std::endl;
-        std::cout << timeData->tm_hour  << ":"
-                  << timeData->tm_min  << ":"
-                  << timeData->tm_sec  << std::endl;
+        // std::cout << "timeSec : " << timeSec << std::endl;
+        // std::cout << timeData->tm_hour  << ":"
+        //           << timeData->tm_min  << ":"
+        //           << timeData->tm_sec  << std::endl;
        delay(100);
     }
 

@@ -1,11 +1,11 @@
-#include "clock.h"
+// #include "clock.h"
 
-clock::clock()
-{
+// clock::clock()
+// {
 
-}
+// }
 
-clock::~clock()
-{
+// clock::~clock()
+// {
 
-}
+// }

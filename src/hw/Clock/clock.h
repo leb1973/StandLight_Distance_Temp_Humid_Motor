@@ -1,16 +1,16 @@
-#ifndef CLOCK_H
-#define CLOCK_H
+// #ifndef CLOCK_H
+// #define CLOCK_H
 
-#pragma once
+// #pragma once
 
-class clock
-{
-public:
-    clock();
-    ~clock();
+// class clock
+// {
+// public:
+//     clock();
+//     ~clock();
 
-private:
+// private:
 
-};
+// };
 
-#endif
+// #endif

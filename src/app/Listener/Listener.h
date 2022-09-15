@@ -9,13 +9,14 @@ class Listener
 {
 
 private :
+    Button  *modeButton;
     Button *powerButton;
     ClockCheck *clockCheck;
     Controller *controller;
 
 public:
     
-    Listener(Button *button, Controller *control,ClockCheck *clockCheck);
+    Listener(Button *modebutton,Button *powerButton, Controller *control,ClockCheck *clockCheck);
     ~Listener();
     void checkEvent();
 };
