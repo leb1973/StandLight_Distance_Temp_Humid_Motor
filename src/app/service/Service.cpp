@@ -18,15 +18,14 @@ void Service::updateState(std::string strState)
     switch (lightState)
     {
         case LIGHT_OFF:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_1; 
-                view->setState(lightState);              
+                view->setState(lightState); 
             }
-            
         break;
 
         case LIGHT_1:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" || strState == "TempHigh") {
                 lightState = LIGHT_2;               
             }
              if (strState == "powerButton") {
@@ -35,7 +34,7 @@ void Service::updateState(std::string strState)
             view->setState(lightState);
         break;
         case LIGHT_2:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" || strState == "TempHigh") {
                 lightState = LIGHT_3;                
             }
              if (strState == "powerButton") {
@@ -44,7 +43,7 @@ void Service::updateState(std::string strState)
              view->setState(lightState);
         break;
         case LIGHT_3:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" || strState == "TempHigh") {
                 lightState = LIGHT_4;               
             }
              if (strState == "powerButton") {
@@ -53,7 +52,7 @@ void Service::updateState(std::string strState)
             view->setState(lightState);
         break;
         case LIGHT_4:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" || strState == "TempHigh") {
                 lightState = LIGHT_5;  
             }
              if (strState == "powerButton") {
@@ -62,7 +61,7 @@ void Service::updateState(std::string strState)
              view->setState(lightState);
         break;
         case LIGHT_5:
-            if (strState == "modeButton") {
+            if (strState == "modeButton" || strState == "TempHigh") {
                 lightState = LIGHT_OFF;             
             }
              if (strState == "powerButton") {

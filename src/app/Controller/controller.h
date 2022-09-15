@@ -4,6 +4,8 @@
 #include <string>
 #include "Service.h"
 #include "ClockService.h"
+#include "DHT_data.h"
+#include "TempHumidService.h"
 
 
 
@@ -16,11 +18,14 @@ private :
    int lightState;
    Service *service;
    ClockService *clockService;
+   TempHumidService *tempHumidService;
 
 public:
     
-    Controller(Service *serv, ClockService *clockServ);
+    Controller(Service *serv, ClockService *clockServ, TempHumidService *tempHumidService);
     virtual ~Controller();
     void updateEvent(std::string strBtn);
+    void updateTempHumid(DHT_Data dhtData);
 };
+
 #endif

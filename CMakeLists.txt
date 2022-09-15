@@ -15,9 +15,13 @@ add_executable(${PROJECT_NAME}
     ./src/app/service/ClockService.cpp
     ./src/app/View/ClockView.cpp
     ./src/hw/I2C/I2C.cpp
+    ./src/hw/DHT11/DHT11.cpp
+    ./src/app/service/TempHumidService.cpp
+    ./src/app/View/TempHumidView.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
+    ./src/hw/DHT11
     ./src/app/service
     ./src/app/Controller
     ./src/app/Listener
