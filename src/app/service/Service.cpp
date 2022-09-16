@@ -25,7 +25,7 @@ void Service::updateState(std::string strState)
         break;
 
         case LIGHT_1:
-            if (strState == "modeButton" || strState == "TempHigh") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_2;               
             }
              if (strState == "powerButton") {
@@ -34,7 +34,7 @@ void Service::updateState(std::string strState)
             view->setState(lightState);
         break;
         case LIGHT_2:
-            if (strState == "modeButton" || strState == "TempHigh") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_3;                
             }
              if (strState == "powerButton") {
@@ -43,7 +43,7 @@ void Service::updateState(std::string strState)
              view->setState(lightState);
         break;
         case LIGHT_3:
-            if (strState == "modeButton" || strState == "TempHigh") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_4;               
             }
              if (strState == "powerButton") {
@@ -52,7 +52,7 @@ void Service::updateState(std::string strState)
             view->setState(lightState);
         break;
         case LIGHT_4:
-            if (strState == "modeButton" || strState == "TempHigh") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_5;  
             }
              if (strState == "powerButton") {
@@ -61,7 +61,7 @@ void Service::updateState(std::string strState)
              view->setState(lightState);
         break;
         case LIGHT_5:
-            if (strState == "modeButton" || strState == "TempHigh") {
+            if (strState == "modeButton" ) {
                 lightState = LIGHT_OFF;             
             }
              if (strState == "powerButton") {

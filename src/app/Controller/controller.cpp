@@ -28,10 +28,7 @@ void Controller::updateEvent(std::string strBtn)
             service->updateState("powerButton");
         }
         
-        if(strBtn == "TempHigh"){
 
-            service->updateState("TempHigh");
-        }
 
         if(strBtn == "clockUpdate"){
             

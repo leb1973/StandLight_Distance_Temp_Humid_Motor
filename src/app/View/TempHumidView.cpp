@@ -43,7 +43,7 @@ void TempHumidView::setTempHumidData(float temp, float humid)
         sprintf(buff,"       ");
         lcd->WriteStringXY(1, 10, buff);
         sprintf(buff, " %.1fC",temp);
-        lcd->WriteStringXY(0, 9, buff);
+        lcd->WriteStringXY(0, 9, buff); 
         sprintf(buff,"  %.1f%%",humid);
         lcd->WriteStringXY(1, 8, buff); 
         

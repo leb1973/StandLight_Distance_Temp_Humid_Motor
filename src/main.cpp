@@ -30,7 +30,7 @@ int main()
     Button modeButton1(27);
     Button powerButton2(28);
     ClockCheck ClockCheck;
-     DHT11 dht(7);
+    DHT11 dht(7);
     Led led1(21);
     Led led2(22);
     Led led3(23);
