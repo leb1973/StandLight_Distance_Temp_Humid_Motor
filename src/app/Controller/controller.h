@@ -26,6 +26,7 @@ public:
     virtual ~Controller();
     void updateEvent(std::string strBtn);
     void updateTempHumid(DHT_Data dhtData);
+    void updateDistance(int distance);
 };
 
 #endif

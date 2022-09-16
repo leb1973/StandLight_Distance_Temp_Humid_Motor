@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 3.0.0)
-
-project(StandLight)
-
 add_executable(${PROJECT_NAME}
     ./src/hw/LCD/LCD.cpp
     ./src/app/Controller/controller.cpp
@@ -18,6 +14,7 @@ add_executable(${PROJECT_NAME}
     ./src/hw/DHT11/DHT11.cpp
     ./src/app/service/TempHumidService.cpp
     ./src/app/View/TempHumidView.cpp
+    ./src/hw/UltraSonic/UltraSonic.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -31,6 +28,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     ./src/hw/ClockCheck
     ./src/hw/LCD
     ./src/hw/I2C
+    ./src/hw/UltraSonic
 
 )
 

@@ -18,6 +18,7 @@
 #include "DHT_data.h"
 #include "TempHumidView.h"
 #include "TempHumidService.h"
+#include "UltraSonic.h"
 
 
 
@@ -31,6 +32,7 @@ int main()
     Button powerButton2(28);
     ClockCheck ClockCheck;
     DHT11 dht(7);
+    UltraSonic ultraSonic(5, 4);
     Led led1(21);
     Led led2(22);
     Led led3(23);
@@ -45,7 +47,7 @@ int main()
     ClockService clockService(&clockView);
     TempHumidService tempHumidService(&tempHumidView);
     Controller control(&service,&clockService, &tempHumidService);
-    Listener listener(&modeButton1, &powerButton2, &control, &ClockCheck,&dht);
+    Listener listener(&modeButton1, &powerButton2, &control, &ClockCheck,&dht,&ultraSonic);
 
     
    

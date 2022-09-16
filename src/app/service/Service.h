@@ -13,11 +13,13 @@ class Service
     private:
         int lightState;
         View *view;
+        bool bDistanceLight;
 
     public:
         Service(View *viewer);
         virtual ~Service();
         void updateState(std::string strState);
+        void updateDistance(int distance);
 };
 
 #endif
